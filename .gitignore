@@ -3,4 +3,5 @@ env/
 study/
 .gitmessage.txt
 requirements.txt
-
+.cache/
+files/
