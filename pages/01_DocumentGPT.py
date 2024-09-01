@@ -38,10 +38,10 @@ llm = ChatOpenAI(
 st.cache_data(show_spinner="Embedding file...")
 def embed_file(file):
     file_content = file.read()
-    file_path = f"./.cache/files/{file.name}"
+    file_path = f"./.cache/private_files/{file.name}"
     with open(file_path, "wb") as f:
         f.write(file_content)
-    cache_dir = LocalFileStore(f"./.cache/embeddings/{file.name}")
+    cache_dir = LocalFileStore(f"./.cache/private_embeddings/{file.name}")
     splitter = CharacterTextSplitter.from_tiktoken_encoder(
         separator="\n",
         chunk_size=600,
@@ -121,7 +121,7 @@ if file:
             | llm
         )
         with st.chat_message("ai"):
-            response = chain.invoke(message)
+            chain.invoke(message)
 else:
     st.session_state["messages"] = []
     
