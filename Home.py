@@ -1,16 +1,20 @@
 import streamlit as st
-from datetime import date, datetime
 
-today = datetime.today().strftime("%H:%M:%S")
+st.set_page_config(
+    page_title="FUllstackGPT Home",
+    page_icon="🎂"
+)
 
+st.markdown(
+    """
+# Hello!
 
+Welcome to my FullstackGPT Portfolio!
 
-st.write("hello")
+Here are the apps I made:
 
-st.title(today)
-
-st.write([1, 2, 3, 4])
-
-st.write({"x":1})
-
-st.selectbox("Choose your model", ("GPT-3", "GPT-4"))
+- [ ] [DocumentGPT](/DocumentGPT)
+- [ ] [PrivateGPT](/PrivateGPT)
+- [ ] [QuizGPT](/QuizGPT)
+"""
+)
