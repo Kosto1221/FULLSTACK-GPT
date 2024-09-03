@@ -16,5 +16,6 @@ Here are the apps I made:
 - [ ] [DocumentGPT](/DocumentGPT)
 - [ ] [PrivateGPT](/PrivateGPT)
 - [ ] [QuizGPT](/QuizGPT)
+- [ ] [SiteGPT](/SiteGPT)
 """
 )
