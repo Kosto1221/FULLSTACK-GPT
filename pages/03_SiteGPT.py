@@ -112,8 +112,10 @@ def parse_page(soup):
 def validate_api_key(api_key):
     try:
         openai.api_key = api_key
-        print("API Key:", api_key)
-        openai.Model.list()
+        openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "system", "content": "Validate API key"}]
+        )
         return True
     except Exception as e:
         print(f"Validation failed: {e}")
@@ -136,7 +138,7 @@ def load_website(url):
     )
     loader.requests_per_second = 2
     docs = loader.load_and_split(text_splitter=splitter)
-    vector_store = FAISS.from_documents(docs, OpenAIEmbeddings())
+    vector_store = FAISS.from_documents(docs, OpenAIEmbeddings(openai_api_key=api_key))
     return vector_store.as_retriever()
 
 st.set_page_config(
