@@ -5,6 +5,8 @@ from langchain.document_loaders import WebBaseLoader
 import openai as client
 import json
 
+st.cache_data.clear()
+
 if 'messages' not in st.session_state:
     st.session_state['messages'] = []
 
