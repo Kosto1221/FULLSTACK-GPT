@@ -6,3 +6,6 @@ study/
 files/
 .streamlit
 notebook.ipynb
+CreatingTheAssistant.ipynb
+SQLDatabaseToolkit.ipynb
+movies.sqlite

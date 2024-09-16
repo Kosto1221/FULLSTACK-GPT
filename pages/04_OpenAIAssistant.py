@@ -5,8 +5,6 @@ from langchain.document_loaders import WebBaseLoader
 import openai as client
 import json
 
-st.cache_data.clear()
-
 if 'messages' not in st.session_state:
     st.session_state['messages'] = []
 
@@ -102,7 +100,6 @@ def get_assistants(_client):
     )
     return assistant.id
 
-
 def validate_api_key(api_key):
     try:
         client.api_key = api_key
@@ -142,6 +139,7 @@ with st.sidebar:
     st.link_button("Go to Git repo", "https://github.com/Kosto1221/FULLSTACK-GPT/blob/main/pages/04_OpenAIAssistant.py")
 
 if api_key and is_valid:
+    client = client()
     paint_history()
     query = st.chat_input("Please enter the topic you wish to research")
 
