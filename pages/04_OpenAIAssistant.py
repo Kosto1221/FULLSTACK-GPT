@@ -139,7 +139,6 @@ with st.sidebar:
     st.link_button("Go to Git repo", "https://github.com/Kosto1221/FULLSTACK-GPT/blob/main/pages/04_OpenAIAssistant.py")
 
 if api_key and is_valid:
-    client = client()
     paint_history()
     query = st.chat_input("Please enter the topic you wish to research")
 
